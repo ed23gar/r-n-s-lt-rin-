@@ -17,8 +17,6 @@
         padding: 0;
     }
 
-
-
 </style>
 
 <head>
@@ -39,32 +37,15 @@
 </head>
 <body class="">
 
-<style>
-    .imagenpareja{
-        width: 100%;
-    }
-
-    .imagenbalonpie{
-        width: 100%;
-    }
-</style>
-
 
 
 <div class="container-fluid row">
 
-    <div class="col-md-4" class >
-        <div class="imagenpareja">
-            <img src="img/pareja1.png" alt="">
-        </div>
+    <div class="col-md-7" class >
+        <img src="img/pareja.png" alt="" width="100%">
     </div>
-    <div class="col-md-4">
-        2
-    </div>
-    <div class="col-md-4">
-        <div class="imagenbalonpie">
-            <img src="img/balonpie1.png" alt="">
-        </div>
+    <div class="col-md-5">
+        <img src="img/balonpie.png" alt="" width="100%">
     </div>
 
 </div>
