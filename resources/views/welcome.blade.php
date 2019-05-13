@@ -80,6 +80,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                    <h2>prueba de linea de codigo</h2>
                 </div>
 
             </div>
