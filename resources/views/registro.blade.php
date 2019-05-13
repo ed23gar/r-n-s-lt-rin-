@@ -41,14 +41,11 @@
 
 <div class="container-fluid row">
 
-    <div class="col-md" class >
-        <img src="img/pareja.png" alt="">
+    <div class="col-md-7" class >
+        <img src="img/pareja.png" alt="" width="100%">
     </div>
-    <div class="col-md">
-        2
-    </div>
-    <div class="col-md">
-        <img src="img/balonpie.png" alt="">
+    <div class="col-md-5">
+        <img src="img/balonpie.png" alt="" width="100%">
     </div>
 
 </div>
