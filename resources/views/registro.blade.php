@@ -2,20 +2,26 @@
 <html lang="en">
 
 <style>
-    /*html{*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*}*/
 
     .container-fluid{
         background-image: url("img/background.png");
         background-repeat: no-repeat;
         background-size: cover;
         max-width: 200px;
+        background-size: 100% 100%;
+        background-position: center;
+
+
+        max-width: 1920px;
         margin: 0 auto;
     }
+
+    footer{
+        height: 00px;
+        background: white;
+    }
+
+
 
 </style>
 
@@ -37,26 +43,50 @@
 </head>
 <body class="">
 
+    <style>
+        .row{
+            margin-left: 0!important;
+            margin-right: 0!important;
+        }
+        .imder{
+            padding-left: 0;
+        }
+        .imizq{
+            padding-right: 0;
+        }
+        .imginterna1{
+            width: 100%;
+            /*height: 100%;*/
+        }
+        .imginterna2{
+            width: 100%;
+            /*height: 100%;*/
+        }
+    </style>
 
 
-<div class="container-fluid row">
 
-    <div class="col-md-7" class >
-        <img src="img/pareja.png" alt="" width="100%">
+    <div class=" row">
+
+        <div class="col-md-7 imder d-flex align-items-end " >
+            <img src="img/pareja.png" alt="" width="" class="imginterna1">
+        </div>
+        <div class="col-md-5 imizq ">
+            <img src="img/balonpie.png" alt="" width="" class="imginterna2">
+        </div>
+
     </div>
-    <div class="col-md-5">
-        <img src="img/balonpie.png" alt="" width="100%">
-    </div>
-
-</div>
+    <footer >
+        loquesea
+    </footer>
 
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
