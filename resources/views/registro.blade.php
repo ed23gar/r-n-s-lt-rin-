@@ -9,12 +9,12 @@
     /*padding: 0;*/
     /*}*/
 
-    body{
+    .container-fluid{
         background-image: url("img/background.png");
         background-repeat: no-repeat;
         background-size: cover;
-        margin: 0;
-        padding: 0;
+        max-width: 200px;
+        margin: 0 auto;
     }
 
 </style>
