@@ -181,7 +181,7 @@
     .botonfonfig{
         margin-top: 15px;
         margin-bottom: 15px;
-        background: #a90000c2;
+        background: #a90000;
         border-color: white;
 
         border-radius: 50px 50px 50px 50px;
@@ -220,13 +220,7 @@
         background: none;
     }
 
-    @media (max-width: 767px) {
 
-
-        .imagenes{
-            display: none;
-        }
-    }
 
     .displayNone{
         display: none;
@@ -236,6 +230,105 @@
     .displayYes{
         display: block;
     }
+
+    /*@media (max-width: 767px) {*/
+        /*.imagenes{*/
+            /*display: none;*/
+        /*}*/
+    /*}*/
+
+    @media(max-width: 991px){
+        .tituloregistro {
+            font-size: 30px;
+        }
+
+        .extremos {
+            background-image: url("img/bgmobile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .divregistro {
+            /*height: 80%;*/
+            width: 90%;
+        }
+        .divcopy{
+            display: none;
+        }
+        .logofooter {
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 10px;
+        }
+        .divregistro {
+            top: 50%;
+        }
+        .botonfonfig {
+            height: 50px;
+        }
+        .txtregistro {
+            font-size: 20px;
+        }
+
+
+    }
+    @media(min-width: 700px) and (max-width: 991px){
+        .divregistro {
+            /*height: 80%;*/
+            width: 70%;
+        }
+    }
+    @media(min-width: 550px) and (max-width: 991px){
+        .logofooter {
+            width: 60%;
+            margin-left: 20%;
+        }
+        .recuadro {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+    }
+    @media(min-width: 992px) and (max-width: 999px){
+        .divregistro {
+            width: 60%;
+        }
+        .recuadro {
+            height: 350px;
+            padding-top: 5px;
+        }
+        .tituloregistro {
+            font-size: 40px;
+        }
+    }
+    @media(min-width: 1000px) and (max-width: 1400px){
+        .divregistro {
+            width: 40%!important;
+        }
+        .recuadro {
+            height: 350px;
+            padding-top: 5px;
+        }
+        .tituloregistro {
+            font-size: 40px;
+        }
+    }
+    @media(min-width: 1000px) and (max-width: 1400px){
+        .divregistro {
+            top: 45%;
+        }
+    }
+    @media(min-width: 1800px){
+        .divregistro {
+            padding-top: 5%;
+        }
+        .txtregistro{
+            font-size: 20px;
+        }
+    }
+
+
 
 
 
@@ -291,12 +384,12 @@
 
     </div>
     <footer class=" row">
-        <div class="col-md-6 ">
+        <div class="col-lg-6 ">
             <div class="">
                 <img src="img/logos.png" alt="" width="" class="logofooter">
             </div>
         </div>
-        <div class="col-md-6 ">
+        <div class="col-md-6 divcopy">
             <div class="">
                 <h4 class="copyfooter ">
                     © Toyota México 2019.
@@ -328,7 +421,7 @@
 
     function myFunction(x) {
 
-        tamanio= $(window).height();
+        tamanio= $(window).height()-120;
 
 
 
