@@ -20,14 +20,28 @@
 <body class="">
 
 <style>
-    #contenido{
+    .extremos{
         background-image: url("img/background.png");
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
         background-position: center;
 
         max-width: 1920px;
         margin: 0 auto;
+
+    }
+
+
+    @media(max-width: 991px){
+
+        .extremos {
+            background-image: url("img/bgmobile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+
 
     }
 
@@ -207,9 +221,20 @@
     }
 
     @media (max-width: 767px) {
-        .extremos{
-           display: none;
+
+
+        .imagenes{
+            display: none;
         }
+    }
+
+    .displayNone{
+        display: none;
+    }
+
+
+    .displayYes{
+        display: block;
     }
 
 
@@ -258,10 +283,10 @@
     <div class=" row extremos">
 
         <div class="col-md-7 imizq  d-flex align-items-end ">
-            <img src="img/pareja.png" alt="" width="" class="imginterna1">
+            <img src="img/pareja.png" alt="" width="" class="imginterna1 imagenes">
         </div>
-        <div class="col-md-5 imder ">
-            <img src="img/balonpie.png" alt="" width="" class="imginterna2">
+        <div class="col-md-5 imder imagenes">
+            <img src="img/balonpie.png" alt="" width="" class=" imginterna2">
         </div>
 
     </div>
@@ -282,6 +307,8 @@
 
 </div>
 
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -293,6 +320,43 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+
+
+<script>
+
+
+    function myFunction(x) {
+
+        tamanio= $(window).height();
+
+
+
+        if (x.matches) {// cuando es pequeño
+
+            $(".imagenes").removeClass("displayYes");
+            $(".imagenes").addClass("displayNone");
+            $(".extremos").css("height", tamanio);
+
+
+
+
+
+        } else {// cuando es grande
+            $(".imagenes").removeClass("displayNone");
+            $(".imagenes").addClass("displayYes");
+            $(".extremos").css("height", "auto");
+        }
+    }
+
+
+
+    var x = window.matchMedia("(max-width: 991px)")
+    myFunction(x)
+    x.addListener(myFunction)
+
+
+</script>
 
 </body>
 </html>
