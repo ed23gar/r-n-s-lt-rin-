@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="css/animate.css">
+
     <title>Test</title>
 
 
@@ -224,17 +226,17 @@
 
 
         .imagenes{
-            display: none;
+            display: none!important;
         }
     }
 
     .displayNone{
-        display: none;
+        display: none!important;
     }
 
 
     .displayYes{
-        display: block;
+        display: flex!important;
     }
 
 
@@ -282,11 +284,11 @@
 
     <div class=" row extremos">
 
-        <div class="col-md-7 imizq  d-flex align-items-end ">
-            <img src="img/pareja.png" alt="" width="" class="imginterna1 imagenes">
+        <div class="col-md-7 imizq  d-flex align-items-end imagenes">
+            <img src="img/pareja.png" alt="" width="" class="animated fadeInLeft imginterna1 displayNone" >
         </div>
-        <div class="col-md-5 imder imagenes">
-            <img src="img/balonpie.png" alt="" width="" class=" imginterna2">
+        <div class="col-md-5 imder ">
+            <img src="img/balonpie.png" alt="" width="" class="animated fadeInDown imginterna2 imagenes">
         </div>
 
     </div>
@@ -330,17 +332,11 @@
 
         tamanio= $(window).height();
 
-
-
         if (x.matches) {// cuando es pequeño
 
             $(".imagenes").removeClass("displayYes");
             $(".imagenes").addClass("displayNone");
             $(".extremos").css("height", tamanio);
-
-
-
-
 
         } else {// cuando es grande
             $(".imagenes").removeClass("displayNone");
@@ -353,7 +349,14 @@
 
     var x = window.matchMedia("(max-width: 991px)")
     myFunction(x)
-    x.addListener(myFunction)
+    x.addListener(myFunction);
+
+    setTimeout(function piebalon() {$(".imginterna1").removeClass("displayNone");},700);
+    
+    
+
+
+
 
 
 </script>
