@@ -430,7 +430,7 @@
 
     function myFunction(x) {
 
-        tamanio= $(window).height()-120;
+        tamanio= $(window).height()+100;
 
 
 
