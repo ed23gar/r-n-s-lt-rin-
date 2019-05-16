@@ -24,7 +24,7 @@
 
 <style>
     .extremos{
-        background-image: url("img/background.png");
+        background-image: url("img/background1.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -41,18 +41,18 @@
     }
 
 
-    @media(max-width: 991px){
+    /*@media(max-width: 991px){*/
 
-        .extremos {
-            background-image: url("img/bgmobile.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+        /*.extremos {*/
+            /*background-image: url("img/bgmobile.jpg");*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: cover;*/
+            /*background-position: center;*/
 
-        }
+        /*}*/
 
 
-    }
+    /*}*/
 
     footer {
         height: 00px;
@@ -252,7 +252,7 @@
         }
 
         .extremos {
-            background-image: url("img/bgmobile.jpg");
+            background-image: url("img/bgmobile1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -272,13 +272,20 @@
             margin-top: 10px;
         }
         .divregistro {
-            top: 50%;
+            top: 42%;
         }
         .botonfonfig {
             height: 50px;
         }
         .txtregistro {
             font-size: 20px;
+        }
+
+
+    }
+    @media(max-width: 991px){
+        .txtregistro {
+            font-size: 15px;
         }
 
 
@@ -341,6 +348,7 @@
 
 
 
+
 </style>
 
 
@@ -349,7 +357,7 @@
     <div class="divregistro">
         <div>
             <div>
-                <h1 class="titulo tituloregistro">REGISTRA TU CÓDIGO</h1>
+                <h1 class="titulo tituloregistro">REGISTRA <br> TU CÓDIGO</h1>
             </div>
             <form>
                 <div class="recuadro">
@@ -380,22 +388,31 @@
                 </div>
             </form>
         </div>
+
+        {{--<div>--}}
+
+                {{--<div class="recuadro">--}}
+
+                    {{--<h2>!HAS SIDO REGISTRADO EXITOSAMENTE!</h2>--}}
+
+                {{--</div>--}}
+        {{--</div>--}}
     </div>
 
     <div class=" row extremos">
 
         <div class="col-md-7 imizq  d-flex align-items-end ">
-            <img src="img/pareja.png" alt="" width="" class="animated fadeInLeft imginterna1 imagenes ">
+            <img src="img/pareja1.png" alt="" width="" class="animated fadeInLeft imginterna1 imagenes ">
         </div>
-        <div class="col-md-5 imder imagenes">
-            <img src="img/balonpie.png" alt="" width="" class="animated fadeInDown imginterna2">
+        <div class="col-md-5 imder imagenes ">
+            <img src="img/balonpie1.png" alt="" width="" class="animated fadeInDown imginterna2">
         </div>
 
     </div>
     <footer class=" row">
         <div class="col-lg-6 ">
             <div class="">
-                <img src="img/logos.png" alt="" width="" class="logofooter">
+                <img src="img/logos1.png" alt="" width="" class="logofooter">
             </div>
         </div>
         <div class="col-md-6 divcopy">
@@ -430,7 +447,7 @@
 
     function myFunction(x) {
 
-        tamanio= $(window).height()-120;
+        tamanio= $(window).height()+100;
 
 
 
