@@ -385,7 +385,7 @@
     <div class=" row extremos">
 
         <div class="col-md-7 imizq  d-flex align-items-end ">
-            <img src="img/pareja.png" alt="" width="" class="animated fadeInLeft imginterna1 imagenes">
+            <img src="img/pareja.png" alt="" width="" class="animated fadeInLeft imginterna1 imagenes ">
         </div>
         <div class="col-md-5 imder imagenes">
             <img src="img/balonpie.png" alt="" width="" class="animated fadeInDown imginterna2">
@@ -457,7 +457,7 @@
     myFunction(x)
     x.addListener(myFunction)
 
-    setTimeout(function piebalon() {$(".imginterna1").removeClass("displayNone");},700);
+    setTimeout(function piebalon() {$(".imizq").removeClass("displayNone");},1000);
 
 
 
