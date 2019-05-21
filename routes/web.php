@@ -23,3 +23,5 @@ Route::get('/trivia', function () {
     return view('trivia');
 });
 
+
+Route::post('/preguntas',"principalController@preguntas");

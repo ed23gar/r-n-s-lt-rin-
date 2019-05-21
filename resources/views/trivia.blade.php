@@ -54,20 +54,25 @@
                 </div>
             </div>
             <form>
-                <div class="recuadro recuadroTrivia">
+
+                <div class="contenido-preguntas">
+
+                <div class="recuadro recuadroTrivia animated bounceInRight">
+
+
 
                     <div class=" white">
                         <p class="contador-preguntas"> 1 DE 15</p>
                     </div>
 
                     <div class="contenedor-preguntas white">
-                        <p class="pregunta">¿EN QUE AÑO FUE EL PRIMER PARTIDO?</p>
+                        <p class="pregunta">¿ cuantos no se que?</p>
 
                         <div class="contenedor-respuesta">
 
                             <input type="hidden" id="id_pregunta" name="id_pregunta" value="1">
 
-                            <button type="button" class="boton-respuesta" id_option="1">1927</button>
+                            <button type="button" class="boton-respuesta" id_option="1">1928</button>
                             <button type="button" class="boton-respuesta" id_option="2">1927</button>
                             <button type="button" class="boton-respuesta" id_option="3">1927</button>
                             <button type="button" class="boton-respuesta" id_option="4">1927</button>
@@ -77,6 +82,9 @@
 
 
                     </div>
+
+                    </div>
+
 
 
                 </div>
