@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +21,6 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::get('/trivia', function () {
-    return view('trivia');
-});
-
+Route::get('/trivia', "principalController@trivia");
 
 Route::post('/preguntas',"principalController@preguntas");

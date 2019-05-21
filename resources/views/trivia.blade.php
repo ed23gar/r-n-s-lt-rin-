@@ -30,18 +30,36 @@
             font-style: italic;
             font-size: 20px;
             font-weight: 500;
+            margin-top: -15px;
         }
 
         .boton-respuesta{
 
             width: 100%;
             margin-top: 20px;
-            border-radius: 10px;
+            border-radius: 1px;
             font-size: 18px;
             font-weight: 600;
             font-style: italic;
             background-color: white;
         }
+
+        .divregistro {
+
+            width: 28%;
+
+        }
+
+        .recuadro{
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .contenedor-respuesta{
+            margin-top: -20px;
+        }
+
+
     </style>
 
 
@@ -62,20 +80,22 @@
 
 
                     <div class=" white">
-                        <p class="contador-preguntas"> 1 DE 15</p>
+                        <p class="contador-preguntas"> {{$_SESSION["conteo_pregunta"]}} DE {{$cant_preguntas}}</p>
                     </div>
 
                     <div class="contenedor-preguntas white">
-                        <p class="pregunta">¿ cuantos no se que?</p>
+                        <p class="pregunta">{{ strtoupper($preguntaTurno) }}</p>
 
                         <div class="contenedor-respuesta">
 
-                            <input type="hidden" id="id_pregunta" name="id_pregunta" value="1">
+                            <input type="hidden" id="id_pregunta" name="id_pregunta" value="{{$id_pregunta}}">
 
-                            <button type="button" class="boton-respuesta" id_option="1">1928</button>
-                            <button type="button" class="boton-respuesta" id_option="2">1927</button>
-                            <button type="button" class="boton-respuesta" id_option="3">1927</button>
-                            <button type="button" class="boton-respuesta" id_option="4">1927</button>
+
+                            @foreach($queryOpciones as $opciones)
+
+                                <button type="button" class="boton-respuesta" id_option="{{$opciones->id_opcion}}">{{$opciones->texto_opcion}}</button>
+
+                                @endforeach
 
 
                         </div>
@@ -89,7 +109,13 @@
 
                 </div>
                 <div class="divboton">
+
+                    {{$_SESSION["conteo_pregunta"]}}
+                    @if($_SESSION["conteo_pregunta"]==$cant_preguntas)
                     <button type="button" id="siguiente" class="btn btn-primary botonfonfig txtregistro">SIGUIENTE</button>
+                        @else
+                        <button type="button" id="siguiente" class="btn btn-primary botonfonfig txtregistro">FINALIZAR</button>
+                    @endif
                 </div>
             </form>
         </div>
