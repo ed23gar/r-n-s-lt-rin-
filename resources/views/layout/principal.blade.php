@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/main.css">
 
 
-    <title>Test</title>
+    <title>Tivia TOYOTA 2019</title>
 
 
 </head>
@@ -70,10 +70,48 @@
         crossorigin="anonymous"></script>
 
 
+<!-- cronometro -->
+
+
+
+    @yield('script')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
 
 
+
+
+    function cargaCronometro(minutos){
+
+
+        $.ajax({
+
+            type: "POST",
+            url:"/cargaCronometro",
+            data: {'_token':'<?php echo csrf_token() ?>',"minutos":minutos,"segundos":segundos,"centesimas":centesimas},
+            success:function(data){
+
+
+
+            }
+
+        });
+
+
+    }
 
 
     $(".divregistro").on("click",".boton-respuesta",function () {
@@ -85,7 +123,6 @@
 
 
     });
-
 
     $(".divregistro").on("click","#siguiente",function(){
 
@@ -99,11 +136,10 @@
 
             type: "POST",
             url:"/preguntas",
-            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta},
+            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta,'valorOption':valorOption},
             success:function(data){
 
-
-            $(".contenido-preguntas").html(data);
+                $(".contenido-preguntas").html(data);
 
             }
 
@@ -111,6 +147,53 @@
 
 
 
+        $.ajax({
+
+            type: "POST",
+            url:"/cambioFinalizar",
+            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta,'valorOption':valorOption},
+            success:function(data){
+
+
+                if(parseInt(data)==1){
+
+                $(".divboton").html('  <button type="button" id="finalizar" class="btn btn-primary botonfonfig txtregistro">FINALIZAR</button>');
+
+                }
+
+            }
+
+        });
+
+
+    });
+
+    $(".divregistro").on("click","#finalizar",function(){
+
+        var valorPregunta = $("#id_pregunta").val();
+        var valorOption= $(".select").attr("id_option");
+        var id_usuario= 1;
+
+
+
+        $.ajax({
+
+            type: "POST",
+            url:"/finalizar",
+            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta,'valorOption':valorOption},
+            success:function(data){
+
+
+                $(".reloj").html("");
+                $(".tituloregistro").html("");
+                $(".divboton").html("");
+                $(".contenido-preguntas").html(data);
+
+
+
+            }
+
+        });
 
 
 
