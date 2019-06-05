@@ -19,3 +19,19 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+
+
+   php_value max_execution_time 1200
+   php_value max_input_time 1200
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 512M
+   php_value upload_max_filesize 256M
+
+# END cPanel-generated php ini directives, do not edit
+

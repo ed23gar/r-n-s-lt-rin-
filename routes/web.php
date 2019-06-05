@@ -14,34 +14,39 @@ session_start();
 |
 */
 
- /*Route::get('/', [ 'as' => 'login', 'uses' => function () {//login
+
+////login para la trivia
+
+
+ Route::get('/', [ 'as' => 'login', 'uses' => function () {
 
      if (!empty($_SESSION["name"]) || isset($_SESSION["name"])) {
-         return redirect('trivia');
+         return redirect('video');// si esta en etapa4 cambiar trivia por video
      }else{
          return view('welcome');
      }
 
 
- }]);*/
+ }]);
 
-Route::get('/', function () {//registro
+
+
+
+//--------------------Registro--------------//
+
+/*Route::get('/', function () {//registro
     if (!empty($_SESSION["name"]) || isset($_SESSION["name"])) {
 
         return redirect('trivia');
     }else{
         return view('registro');
     }
-});
-
-
-//--------------------Registro--------------//
-
+});*/
 
 
   Route::post('registrarParticipante', "principalController@registrarParticipante");
 
-
+//--------------------fin Registro--------------//
 
 
     Route::get('/trivia', "principalController@trivia");
@@ -59,9 +64,20 @@ Route::get('/', function () {//registro
         return view('participacion');
     });
 
+    Route::get('participacionVideo',function (){
+
+    return view('participacionVideo');
+});
+
+
+    Route::get('video','principalController@vistaVideo');
+
+    Route::post('uploadsArchivos','principalController@uploadsArchivos');
+
 
 
 
 //Login
 
 Route::post('comprobar', 'LogController@comprobar');
+Route::get('logout','LogController@logout');

@@ -17,6 +17,10 @@
 
     <link rel="stylesheet" href="css/main.css">
 
+    <link rel="stylesheet" href="bower_components/dropzone/downloads/css/dropzone.css">
+
+
+
 
     <title>Tivia TOYOTA 2019</title>
 
@@ -68,6 +72,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+
+<script src="bower_components/dropzone/downloads/dropzone.min.js"></script>
 
 
 <!-- cronometro -->
@@ -172,7 +179,7 @@
 
         var valorPregunta = $("#id_pregunta").val();
         var valorOption= $(".select").attr("id_option");
-        var id_usuario= 1;
+
 
 
 
@@ -180,7 +187,7 @@
 
             type: "POST",
             url:"/finalizar",
-            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta,'valorOption':valorOption},
+            data: {'_token':'<?php echo csrf_token() ?>','id_pregunta':valorPregunta,'valorOption':valorOption,'minutos':minutos,'segundos':segundos,'centesimas':centesimas},
             success:function(data){
 
 
@@ -231,6 +238,9 @@
     x.addListener(myFunction)
 
     setTimeout(function piebalon() {$(".imizq").removeClass("displayNone");},1000);
+
+
+
 
 
 

@@ -5,7 +5,7 @@
     <style>
         .contador{
 
-            width: 145px;
+            width: 160px;
             margin: 0 auto 70px;
 
         }
@@ -70,6 +70,8 @@
             font-size: 36px;
             font-weight: 500;
             color:white;
+
+
         }
 
 
@@ -157,7 +159,7 @@
                 <h1 class="titulo tituloregistro">TRIVIA</h1>
                 <div class="contador">
 
-                <div class="reloj">
+<div class="reloj">
 
                     @if(isset($cronometro))
                         <div class="reloj" id="Minutos"  >@if($cronometro[0]->minutos<10)0{{$cronometro[0]->minutos}}@else {{$cronometro[0]->minutos}}    @endif</div>
@@ -170,9 +172,11 @@
                         <div class="reloj" id="Centesimas" >:00</div>
 
                     @endif
+
+</div>
                 </div>
 
-                </div>
+
 
 
             <form>

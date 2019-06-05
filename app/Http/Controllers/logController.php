@@ -38,14 +38,14 @@ class LogController extends Controller
 
                 if ($query[0]->valido == 1) {
 
-                    if ($query[0]->etapa1 != 1) {
+                    if ($query[0]->etapa1 != 1) {// cambiar campo etapa dependiendo de la etapa del concurso
 
                         if (Hash::check($password, $query[0]->password)) {
 
                             $_SESSION["name"] = $query[0]->nombre;
                             $_SESSION["id_participante"] = $query[0]->id_participante;
 
-                            return redirect('trivia');
+                            return redirect('trivia');// cambiar trivia por video si es etapa4
 
                         } else {
                             $mensaje = "Usuario y/o Contraseña incorrectos";
@@ -54,18 +54,12 @@ class LogController extends Controller
                         }
 
                     } else {
-
                         return redirect("participacion");
-
                     }
 
-
                 } else {
-
                     return redirect("/");
-
                 }
-
 
             } else {
                 return redirect("/");
@@ -87,12 +81,12 @@ class LogController extends Controller
     public function logout(){
 
         Auth::logout();
-/*
-        unset($_SESSION["fechainicio"]);
-        unset($_SESSION["fechafin"]);
-        unset($_SESSION["id_estacion"]);*/
 
-        return Redirect::to('login');
+        unset($_SESSION["name"]);
+        unset($_SESSION["id_participante"]);
+
+
+        return Redirect::to('participacion');// cambiar a participacionVideo cuando estes en la etapa4
 
     }
 

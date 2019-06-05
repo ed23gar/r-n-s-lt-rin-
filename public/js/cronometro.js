@@ -4,7 +4,6 @@ $(".btn-comenzar").click(function(){
 
     control = setInterval(cronometro,10);
 
-
 });
 
 
@@ -12,7 +11,8 @@ function cronometro () {
     if (centesimas < 99) {
         centesimas++;
         if (centesimas < 10) { centesimas = "0"+centesimas }
-        Centesimas.innerHTML = ":"+centesimas;
+        $("#Centesimas").html(':'+centesimas);
+
     }
     if (centesimas == 99) {
         centesimas = -1;
@@ -48,3 +48,5 @@ function cronometro () {
 
 
 }
+
+

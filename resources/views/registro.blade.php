@@ -68,7 +68,7 @@
 
     .titulomodal{
 
-        font-size: 92px!important;
+        font-size: 86px!important;
         margin-bottom: 24px;
         margin-top: 60px;
 
@@ -103,6 +103,30 @@ margin-top: -20px;
         margin-bottom: -20px;
     }
 
+    .close {
+        float: right;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 0;
+        color: white;
+        text-shadow: inherit;
+        opacity: 1;
+        border: 4px solid white!important;
+        background-color: #b7b7b7!important;
+        border-radius: 40px;
+        height: 50px;
+        width: 50px;
+        padding-left: 8px!important;
+        padding-top: 5px!important;
+    }
+
+    .equis{
+       height: 10px;
+    }
+
+
+
+
 
 
 
@@ -117,8 +141,8 @@ margin-top: -20px;
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" hidden class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="equis">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">

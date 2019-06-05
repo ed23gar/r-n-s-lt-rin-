@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Hash;
+use Illuminate\Support\Facades\Storage;
 
 class principalController extends Controller
 {
@@ -234,7 +235,36 @@ class principalController extends Controller
 
 
 
-DB::update("update participantes set etapa1=1 where id_participante= ".$_SESSION["id_participante"]."");
+DB::update("update participantes set etapa1=1 where id_participante= ".$_SESSION["id_participante"].""); // cambiar el campo etapa1 por la etapa correspondiente
+
+
+
+
+$resultado=DB::select("SELECT count(*) as puntaje FROM preguntas, respuestas WHERE id_participante=".$_SESSION["id_participante"]." AND preguntas.etapa=".env('ETAPA_CONCURSO')." AND respuestas.etapa=".env('ETAPA_CONCURSO')." AND respuestas.fk_id_pregunta = preguntas.id_pregunta AND respuestas.respuesta=preguntas.opcion_correcta");
+$puntaje=$resultado[0]->puntaje;
+
+
+
+        $minutos=$request->minutos;
+        $segundos=$request->segundos;
+        $centesimas=$request->centesimas;
+
+        $comprobar=DB::select("select count(fk_id_participante) as conteo from resultados where fk_id_participante = ".$_SESSION["id_participante"]."");
+
+        if($comprobar[0]->conteo > 0){
+
+            DB::update("update resultados set minutos=$minutos, segundos=$segundos, centesimas =$centesimas where fk_id_participante = ".$_SESSION["id_participante"]." ");
+
+        }else{
+
+            DB::insert("insert into resultados (fk_id_participante,etapa,minutos,segundos,centesimas, fecha) values (".$_SESSION["id_participante"].",".env('ETAPA_CONCURSO').",$minutos,$segundos,$centesimas, SYSDATE()) ");
+        }
+
+
+
+
+
+        DB::update("update resultados set calificacion=".$puntaje." where fk_id_participante = ".$_SESSION["id_participante"]."");// guardamos el resultado automaticamente
 
 
     unset($_SESSION["name"]);
@@ -305,6 +335,61 @@ DB::update("update participantes set etapa1=1 where id_participante= ".$_SESSION
 
 
 
+    }
+
+
+    public function vistaVideo(){
+
+        if (!empty($_SESSION["name"]) || isset($_SESSION["name"])) {
+
+            $str = $_SESSION["name"];
+            $nombre=explode(" ",$str);
+            $nombre=$nombre[0];
+
+
+            return view('vistaVideo', compact('nombre'));
+
+        }else{
+
+            return redirect('/');
+        }
+
+
+
+    }
+
+    public function uploadsArchivos(Request $request)
+    {
+
+
+
+        if ($request->hasFile('file')) {
+
+            $video = $request->file('file');
+
+            $name = $video->getClientOriginalName();
+
+            $str = $_SESSION["name"];
+            $nombre=explode(" ",$str);
+            $nombre=$nombre[0];
+            $id=$_SESSION["id_participante"];
+
+            Storage::disk('videosToyota')->put($id.$nombre."/".$name,\File::get($video));
+
+            DB::update("update participantes set etapa4=1 where id_participante= ".$id."");
+
+
+
+
+        }
+
+
+
+    }
+
+    public function participacionVideo(){
+
+        return view('participacionVideo');
     }
 
 
